@@ -23,10 +23,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/brand/Logo.png', type: 'image/png' },
+      { url: '/brand/logo-modoanden.png', type: 'image/png' },
     ],
     shortcut: ['/favicon.ico'],
-    apple: [{ url: '/brand/Logo.png', type: 'image/png' }],
+    apple: [{ url: '/brand/logo-modoanden.png', type: 'image/png' }],
   },
   openGraph: {
     title: 'ModoAndén — Escapadas y viajes sin coche',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: '/',
     images: [
       {
-        url: '/brand/Logo.png',
+        url: '/brand/logo-modoanden.png',
         width: 1024,
         height: 768,
         alt: 'ModoAndén - Escapadas y viajes sin coche',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: 'ModoAndén — Escapadas y viajes sin coche',
     description:
       'Escapadas fáciles de organizar sin coche. Destinos accesibles en tren o bus desde las principales ciudades de España.',
-    images: ['/brand/Logo.png'],
+    images: ['/brand/logo-modoanden.png'],
   },
   robots: {
     index: true,

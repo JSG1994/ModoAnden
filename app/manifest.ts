@@ -12,12 +12,12 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: 'es-ES',
     icons: [
       {
-        src: '/brand/Logo.png',
+        src: '/brand/logo-modoanden.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/brand/Logo.png',
+        src: '/brand/logo-modoanden.png',
         sizes: '512x512',
         type: 'image/png',
       },
