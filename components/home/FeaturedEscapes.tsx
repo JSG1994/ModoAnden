@@ -1,32 +1,40 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import { MapPin, ArrowRight } from 'lucide-react'
 import { escapes } from '@/data/escapes'
-import EscapeCard from '@/components/escapes/EscapeCard'
+import Badge from '@/components/ui/Badge'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { ArrowRight } from 'lucide-react'
 
 export default function FeaturedEscapes() {
-  const featured = escapes.filter(e => e.featured).slice(0, 8)
+  const featured = escapes.filter(e => e.featured)
 
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
-        <SectionHeading
-          title="Escapadas destacadas"
-          subtitle="Una selección de planes bien pensados para decidir rápido."
-        />
-        <Link
-          href="/escapadas"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-teal-600 hover:text-teal-800 transition-colors shrink-0"
-        >
-          Ver todas
-          <ArrowRight size={15} />
-        </Link>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featured.map(escape => (
-          <EscapeCard key={escape.id} escape={escape} />
-        ))}
+    <section className="py-16 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto">
+        <SectionHeading title="Escapadas destacadas" subtitle="Seleccion editorial de los mejores destinos" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          {featured.map(escape => (
+            <Link key={escape.id} href={`/escapadas/${escape.slug}`} className="group rounded-xl overflow-hidden border border-slate-200 hover:border-brand-accent transition-colors">
+              <div className="relative h-48">
+                <Image src={escape.heroImage} alt={escape.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div className="p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <Badge>{escape.category}</Badge>
+                  <span className="text-xs text-slate-400 flex items-center gap-1">
+                    <MapPin size={11} />
+                    {escape.departureCity}
+                  </span>
+                </div>
+                <h3 className="font-bold text-slate-900 group-hover:text-brand-accent transition-colors">{escape.title}</h3>
+                <p className="text-sm text-slate-500 mt-1 line-clamp-2">{escape.subtitle}</p>
+                <div className="flex items-center gap-1 text-brand-accent text-sm font-medium mt-3">
+                  Ver escapada <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   )

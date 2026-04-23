@@ -1,42 +1,34 @@
 import Link from 'next/link'
-import { ArrowRight, MapPin } from 'lucide-react'
-import QuickFilters from './QuickFilters'
+import { MapPin, ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className="bg-white border-b border-slate-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-        <div className="max-w-3xl">
-          <p className="inline-flex items-center gap-1.5 text-teal-700 text-sm font-semibold mb-4">
-            <MapPin size={14} />
-            Escapadas por España
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight">
-            Escapadas fáciles<br className="hidden sm:block" /> de 1 a 3 noches
-          </h1>
-          <p className="mt-5 text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl">
-            Selección curada de escapadas fáciles de organizar. Filtra por ciudad de salida,
-            presupuesto y si necesitas coche. Decide en minutos, reserva sin perder tiempo.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/escapadas"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-teal-600 text-white font-semibold hover:bg-teal-700 transition-colors"
-            >
-              Ver todas las escapadas
-              <ArrowRight size={16} />
-            </Link>
-            <Link
-              href="/sobre-velqia"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-slate-300 text-slate-700 font-semibold hover:bg-slate-50 transition-colors"
-            >
-              Cómo funciona
-            </Link>
-          </div>
+    <section className="bg-brand text-white py-20 px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 bg-brand-light text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+          <MapPin size={14} className="text-brand-accent" />
+          Escapadas sin coche desde Espana
         </div>
-
-        <div className="mt-12">
-          <QuickFilters />
+        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
+          Escapadas y viajes sin coche
+        </h1>
+        <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+          Destinos pensados para ir en tren. Guias editoriales con opinion, no listas de enlaces.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            href="/escapadas"
+            className="inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-light text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          >
+            Ver escapadas
+            <ArrowRight size={16} />
+          </Link>
+          <Link
+            href="/sobre-nosotros"
+            className="inline-flex items-center gap-2 border border-slate-400 hover:border-white text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          >
+            Sobre nosotros
+          </Link>
         </div>
       </div>
     </section>

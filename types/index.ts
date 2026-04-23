@@ -1,19 +1,8 @@
-export type BudgetLevel = 'bajo' | 'medio' | 'alto'
-export type TransportType = 'tren' | 'bus' | 'coche' | 'avion' | 'mixto'
-export type Category =
-  | 'naturaleza'
-  | 'ciudad'
-  | 'playa'
-  | 'gastronomia'
-  | 'cultura'
-  | 'aventura'
-  | 'relax'
-export type Season = 'primavera' | 'verano' | 'otoño' | 'invierno' | 'todo-el-año'
+export type Category = 'naturaleza' | 'ciudad' | 'playa' | 'gastronomia' | 'cultura' | 'aventura' | 'relax'
 
-export interface AffiliateLinks {
-  hotelUrl?: string
-  activityUrl?: string
-  transportUrl?: string
+export interface FAQItem {
+  question: string
+  answer: string
 }
 
 export interface AccommodationRecommendation {
@@ -23,51 +12,87 @@ export interface AccommodationRecommendation {
   affiliateUrl?: string
 }
 
-export interface ActivityRecommendation {
-  name: string
-  description: string
-  type: 'principal' | 'alternativa' | 'opcional'
-  affiliateUrl?: string
+export interface DurationVariant {
+  nights: number
+  title: string
+  summary: string
+  forWhom: string[]
+  whatToDo: string
+  whatNotToDo: string
+  verdict: string
+  accommodations: AccommodationRecommendation[]
+  tip: string
+  ctaText: string
 }
 
-export interface ItineraryDay {
-  day: number
-  title: string
-  description: string
-  highlights: string[]
+export interface BudgetItem {
+  concept: string
+  level: string
+}
+
+export interface BudgetVariant {
+  nights: number
+  label: string
+  items: BudgetItem[]
+  summary: string
+}
+
+export interface AffiliateLinks {
+  hotelUrl?: string
+  activityUrl?: string
+  transportUrl?: string
 }
 
 export interface Escape {
   id: string
   slug: string
   title: string
+  subtitle: string
   location: string
   departureCity: string
-  durationNights: number
-  budgetLevel: BudgetLevel
-  budgetEstimate: string
+  heroImage: string
   category: Category
   tags: string[]
-  shortDescription: string
-  fullDescription: string
-  idealFor: string[]
-  bestSeason: Season[]
-  transportType: TransportType
-  carRequired: boolean
-  travelTime: string
-  heroImage: string
-  galleryImages: string[]
-  itinerary: ItineraryDay[]
-  accommodationRecommendations: AccommodationRecommendation[]
-  activityRecommendations: ActivityRecommendation[]
-  affiliateLinks: AffiliateLinks
   featured: boolean
+  shortDescription: string
+  overview: {
+    summary: string
+    bestFor: string[]
+    lessRecommendedFor: string[]
+    bestSeason: string
+    generalAdvice: string
+  }
+  quickSummary: {
+    text: string
+    keys: string[]
+  }
+  durationVariants: DurationVariant[]
+  practical: {
+    intro: string
+    items: { label: string; value: string }[]
+    howToGetThere: string
+    howToGetThereExtra?: string
+    budgetIntro: string
+    budgets: BudgetVariant[]
+    ticketsText: string
+    ticketsTip: string
+  }
+  editorial: {
+    accommodationIntro?: string
+    commonMistakes: string[]
+    weatherIntro: string
+    weatherHot: string[]
+    weatherRainy: string[]
+    firstTimeAdvice: { title: string; text: string }
+    quickWeekendAdvice: { title: string; text: string }
+    closing: { title: string; text: string }
+  }
+  faq: FAQItem[]
+  affiliateLinks?: AffiliateLinks
 }
 
 export interface FilterState {
   departureCity: string
   durationNights: number | null
-  budgetLevel: BudgetLevel | null
   category: Category | null
-  carRequired: boolean | null
 }

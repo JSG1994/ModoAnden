@@ -1,36 +1,19 @@
-import type { Escape, FilterState, BudgetLevel } from '@/types'
+import type { Escape, FilterState } from '@/types'
 
-export type SortOption = 'relevancia' | 'presupuesto-asc' | 'presupuesto-desc' | 'duracion-asc' | 'destacados'
-
-function budgetOrder(level: BudgetLevel): number {
-  return { bajo: 1, medio: 2, alto: 3 }[level]
-}
+export type SortOption = 'relevancia' | 'destacados'
 
 export function filterEscapes(escapes: Escape[], filters: FilterState): Escape[] {
-  return escapes.filter(escape => {
-    if (filters.departureCity && escape.departureCity !== filters.departureCity) return false
-    if (filters.durationNights !== null && escape.durationNights !== filters.durationNights) return false
-    if (filters.budgetLevel !== null && escape.budgetLevel !== filters.budgetLevel) return false
-    if (filters.category !== null && escape.category !== filters.category) return false
-    if (filters.carRequired !== null && escape.carRequired !== filters.carRequired) return false
+  return escapes.filter(e => {
+    if (filters.departureCity && e.departureCity !== filters.departureCity) return false
+    if (filters.durationNights !== null && !e.durationVariants.some(d => d.nights === filters.durationNights)) return false
+    if (filters.category && e.category !== filters.category) return false
     return true
   })
 }
 
 export function sortEscapes(escapes: Escape[], sort: SortOption): Escape[] {
-  const copy = [...escapes]
-  switch (sort) {
-    case 'destacados':
-      return copy.sort((a, b) => Number(b.featured) - Number(a.featured))
-    case 'presupuesto-asc':
-      return copy.sort((a, b) => budgetOrder(a.budgetLevel) - budgetOrder(b.budgetLevel))
-    case 'presupuesto-desc':
-      return copy.sort((a, b) => budgetOrder(b.budgetLevel) - budgetOrder(a.budgetLevel))
-    case 'duracion-asc':
-      return copy.sort((a, b) => a.durationNights - b.durationNights)
-    default:
-      return copy
-  }
+  if (sort === 'destacados') return [...escapes].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
+  return escapes
 }
 
 export function getEscapeBySlug(escapes: Escape[], slug: string): Escape | undefined {

@@ -2,40 +2,26 @@
 
 import type { SortOption } from '@/lib/filters'
 
-interface SortBarProps {
+interface Props {
+  count: number
   sort: SortOption
-  total: number
-  onChange: (sort: SortOption) => void
+  onSortChange: (s: SortOption) => void
 }
 
-const options: { value: SortOption; label: string }[] = [
-  { value: 'relevancia', label: 'Relevancia' },
-  { value: 'destacados', label: 'Destacadas primero' },
-  { value: 'presupuesto-asc', label: 'Precio: menor a mayor' },
-  { value: 'presupuesto-desc', label: 'Precio: mayor a menor' },
-  { value: 'duracion-asc', label: 'Más cortas primero' },
-]
-
-export default function SortBar({ sort, total, onChange }: SortBarProps) {
+export default function SortBar({ count, sort, onSortChange }: Props) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-      <p className="text-sm text-slate-600">
-        <span className="font-semibold text-slate-900">{total}</span>{' '}
-        {total === 1 ? 'escapada encontrada' : 'escapadas encontradas'}
-      </p>
+    <div className="flex items-center justify-between py-3 border-b border-slate-200">
+      <p className="text-sm text-slate-500">{count} escapada{count !== 1 ? 's' : ''}</p>
       <div className="flex items-center gap-2">
-        <label htmlFor="sort-select" className="text-xs text-slate-500 font-medium whitespace-nowrap">
-          Ordenar por
-        </label>
+        <label htmlFor="sort" className="text-xs text-slate-400">Ordenar por</label>
         <select
-          id="sort-select"
+          id="sort"
           value={sort}
-          onChange={e => onChange(e.target.value as SortOption)}
-          className="px-3 py-2 rounded-lg border border-slate-200 bg-white text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          onChange={e => onSortChange(e.target.value as SortOption)}
+          className="text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-brand-accent"
         >
-          {options.map(opt => (
-            <option key={opt.value} value={opt.value}>{opt.label}</option>
-          ))}
+          <option value="relevancia">Relevancia</option>
+          <option value="destacados">Destacados</option>
         </select>
       </div>
     </div>

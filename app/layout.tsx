@@ -8,17 +8,17 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   title: {
-    default: 'VELQIA — Escapadas cortas fáciles de organizar',
-    template: '%s | VELQIA',
+    default: 'ModoAndén — Escapadas y viajes sin coche',
+    template: '%s | ModoAndén',
   },
   description:
-    'Encuentra escapadas de 1 a 3 noches fáciles de organizar, sin coche o con logística sencilla. Selección curada para decidir rápido y reservar sin perder tiempo.',
-  keywords: ['escapadas', 'viajes cortos', 'fin de semana', 'sin coche', 'escapadas España'],
+    'Escapadas fáciles de organizar sin necesidad de coche. Selección curada de destinos accesibles en tren o bus. Decide rápido, reserva sin perder tiempo.',
+  keywords: ['escapadas sin coche', 'viajes en tren', 'fin de semana sin coche', 'escapadas España'],
   openGraph: {
-    title: 'VELQIA — Escapadas cortas fáciles de organizar',
+    title: 'ModoAndén — Escapadas y viajes sin coche',
     description:
-      'Selección curada de escapadas de 1 a 3 noches. Filtra por ciudad de salida, presupuesto y tipo de plan. Reserva rápido.',
-    siteName: 'VELQIA',
+      'Escapadas fáciles de organizar sin coche. Destinos accesibles en tren o bus desde las principales ciudades de España.',
+    siteName: 'ModoAndén',
     locale: 'es_ES',
     type: 'website',
   },

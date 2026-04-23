@@ -1,4 +1,9 @@
-import type { Metadata } from 'next'
+const fs = require('fs')
+const path = require('path')
+
+const BASE = String.raw`c:\Escritorio\Pagina Web\velqia`
+
+const slugPage = `import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { escapes } from '@/data/escapes'
 import { getEscapeBySlug } from '@/lib/filters'
@@ -21,10 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!escape) return {}
   return {
     title: escape.title,
-    description: escape.shortDescription,
+    description: escape.subtitle,
     openGraph: {
       title: escape.title,
-      description: escape.shortDescription,
+      description: escape.subtitle,
       images: [{ url: escape.heroImage }],
     },
   }
@@ -43,9 +48,7 @@ export default function EscapeDetailPage({ params }: Props) {
           <div className="lg:col-span-2 space-y-12">
             <section>
               <h2 className="text-xl font-bold text-slate-900 mb-4">Sobre esta escapada</h2>
-              {escape.overview.summary.split('\n\n').map((p, i) => (
-                <p key={i} className="text-slate-600 leading-relaxed mb-3">{p}</p>
-              ))}
+              <p className="text-slate-600 leading-relaxed mb-3">{escape.overview.intro}</p>
 
               <div className="grid gap-4 md:grid-cols-2 mt-6">
                 <div className="bg-green-50 rounded-lg p-4">
@@ -87,3 +90,8 @@ export default function EscapeDetailPage({ params }: Props) {
     </>
   )
 }
+`
+
+const fullPath = path.join(BASE, 'app', 'escapadas', '[slug]', 'page.tsx')
+fs.writeFileSync(fullPath, slugPage, 'utf8')
+console.log('slug/page.tsx:', slugPage.split('\n').length, 'lines')
