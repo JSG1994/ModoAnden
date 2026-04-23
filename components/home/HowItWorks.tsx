@@ -5,17 +5,17 @@ const steps = [
   {
     icon: MapPin,
     title: 'Elige destino',
-    description: 'Filtra por duracion o ciudad de salida. Solo destinos con transporte publico.',
+    description: 'Filtra por duración o ciudad de salida. Solo destinos con transporte público.',
   },
   {
     icon: Train,
-    title: 'Mira como llegar',
+    title: 'Mira cómo llegar',
     description: 'Cada escapada incluye la ruta en tren y los tiempos reales de viaje.',
   },
   {
     icon: Clock,
     title: 'Decide tu formato',
-    description: 'Te explicamos que ver segun vayas 1, 2 o 3 noches. Sin relleno.',
+    description: 'Te explicamos qué ver según vayas 1, 2 o 3 noches. Sin relleno.',
   },
 ]
 
@@ -23,7 +23,7 @@ export default function HowItWorks() {
   return (
     <section className="bg-slate-50 py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading title="Como funciona" subtitle="Sin publicidad ni listas de patrocinadores" />
+        <SectionHeading title="Cómo funciona" subtitle="Sin publicidad ni listas de patrocinadores" />
         <div className="grid sm:grid-cols-3 gap-8 mt-10">
           {steps.map((step, i) => (
             <div key={i} className="flex flex-col items-center text-center">

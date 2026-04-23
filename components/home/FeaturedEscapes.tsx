@@ -11,7 +11,7 @@ export default function FeaturedEscapes() {
   return (
     <section className="py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <SectionHeading title="Escapadas destacadas" subtitle="Seleccion editorial de los mejores destinos" />
+        <SectionHeading title="Escapadas destacadas" subtitle="Selección editorial de los mejores destinos" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {featured.map(escape => (
             <Link key={escape.id} href={`/escapadas/${escape.slug}`} className="group rounded-xl overflow-hidden border border-slate-200 hover:border-brand-accent transition-colors">

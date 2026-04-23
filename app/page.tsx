@@ -2,8 +2,6 @@
 import QuickFilters from '@/components/home/QuickFilters'
 import FeaturedEscapes from '@/components/home/FeaturedEscapes'
 import HowItWorks from '@/components/home/HowItWorks'
-import ValueBlock from '@/components/home/ValueBlock'
-import SeoBlock from '@/components/home/SeoBlock'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://modoanden.com'
 
@@ -38,8 +36,6 @@ export default function HomePage() {
       <QuickFilters />
       <FeaturedEscapes />
       <HowItWorks />
-      <ValueBlock />
-      <SeoBlock />
     </>
   )
 }
