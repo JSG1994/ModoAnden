@@ -12,6 +12,8 @@ interface Props {
   params: { slug: string }
 }
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://modoanden.com'
+
 export function generateStaticParams() {
   return escapes.map(e => ({ slug: e.slug }))
 }
@@ -20,12 +22,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const escape = getEscapeBySlug(escapes, params.slug)
   if (!escape) return {}
   return {
-    title: escape.title,
+    title: `${escape.title} sin coche`,
     description: escape.shortDescription,
+    alternates: {
+      canonical: `/escapadas/${escape.slug}`,
+    },
+    keywords: [
+      `${escape.title} sin coche`,
+      `escapada a ${escape.title}`,
+      `viaje corto a ${escape.title}`,
+      `qué ver en ${escape.title}`,
+    ],
     openGraph: {
-      title: escape.title,
+      title: `${escape.title} sin coche | ModoAndén`,
       description: escape.shortDescription,
+      url: `/escapadas/${escape.slug}`,
+      type: 'article',
       images: [{ url: escape.heroImage }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${escape.title} sin coche | ModoAndén`,
+      description: escape.shortDescription,
+      images: [escape.heroImage],
     },
   }
 }
@@ -34,8 +53,24 @@ export default function EscapeDetailPage({ params }: Props) {
   const escape = getEscapeBySlug(escapes, params.slug)
   if (!escape) notFound()
 
+  const tripJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Trip',
+    name: `Escapada a ${escape.title} sin coche`,
+    description: escape.shortDescription,
+    image: [escape.heroImage],
+    url: `${siteUrl}/escapadas/${escape.slug}`,
+    touristType: escape.overview.bestFor,
+    itinerary: escape.durationVariants.map(variant => ({
+      '@type': 'TouristTrip',
+      name: variant.title,
+      description: variant.summary,
+    })),
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(tripJsonLd) }} />
       <EscapeDetailHero escape={escape} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
