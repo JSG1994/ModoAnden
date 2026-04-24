@@ -276,6 +276,289 @@ export const aranjuezEscape: Escape = {
     },
   },
 
+  realExperience: {
+    title: 'Lo que de verdad hace especial a Aranjuez',
+    intro:
+      'Aranjuez gana mucho cuando dejas de mirarla como una ciudad de monumentos y empiezas a verla como un paisaje. Esa es la clave. El palacio importa, pero lo que hace que el viaje tenga sentido es cómo se junta con el Tajo, los jardines, las calles arboladas, la huerta y esa sensación de sitio amplio, algo palaciego y algo agrícola al mismo tiempo.',
+    officialReading:
+      'Oficialmente, Aranjuez no es solo un conjunto de edificios bonitos. Es un Paisaje Cultural Patrimonio Mundial, y eso se nota cuando el viaje se organiza bien: no como una suma de entradas, sino como una escapada de paseo, agua, sombra, arquitectura y huerta.',
+    realTravelerReading:
+      'En las opiniones de viajeros se repite una idea bastante clara: el Palacio Real suele gustar, los jardines sorprenden por tamaño y tranquilidad, pero el destino puede decepcionar si se va con prisas o esperando fuentes perfectas y todo funcionando a la vez. Aranjuez es bonito, sí, pero no siempre es impecable. Su encanto es más atmosférico que espectacular.',
+    honestVerdict:
+      'La forma buena de vender Aranjuez no es decir que "hay muchísimo que ver", sino explicar que lo que hay se disfruta mejor despacio. Si el usuario entiende eso antes de reservar, la escapada tiene muchas más posibilidades de salir bien.',
+  },
+
+  detailedItinerary: {
+    title: 'Cómo organizar Aranjuez sin correr',
+    intro:
+      'La diferencia entre una Aranjuez floja y una Aranjuez muy agradable suele estar en el ritmo. Si intentas hacerlo todo en modo excursión, se vuelve pesado. Si eliges bien y dejas margen, funciona mucho mejor.',
+    oneDayFromMadrid: {
+      title: 'Si vas solo en el día desde Madrid',
+      plan:
+        'Llegada por la mañana, Palacio Real primero, paseo por el Jardín de la Isla o entorno del Parterre, comida sin prisas y por la tarde Jardín del Príncipe solo hasta donde apetezca. Si hace calor o vas con poca energía, el tren turístico puede tener sentido para hacerse una idea de los jardines sin convertir la tarde en una caminata larga.',
+      warning:
+        'No intentaría meter Palacio, Jardín de la Isla, Jardín del Príncipe completo, Falúas, Casa del Labrador, paseo por el río y comida larga en el mismo día. Sobre el papel suena posible; en la práctica suele convertir una escapada agradable en una lista cansada.',
+    },
+    oneNight: {
+      title: 'Si duermes 1 noche',
+      plan:
+        'Día 1: llegada, Palacio Real, Jardín de la Isla, Plaza de San Antonio y comida o cena tranquila. Día 2: Jardín del Príncipe con más calma, Museo de Falúas si apetece y vuelta sin apurar demasiado.',
+      whyItWorks:
+        'Una noche es probablemente la mejor fórmula para quien quiere sentir escapada sin complicarse. Quita presión, permite cenar allí y deja una segunda mañana para ver lo que en una excursión se suele hacer deprisa.',
+    },
+    twoNights: {
+      title: 'Si duermes 2 noches',
+      plan:
+        'Día 1: llegada cómoda, paseo de toma de contacto, cena en el centro. Día 2: Palacio, jardines y comida seria. Día 3: huerta, bodega, Falúas, Casa del Labrador si encaja o simplemente paseo largo antes de volver.',
+      whyItWorks:
+        'Dos noches son para quien quiere saborear Aranjuez, no para quien necesita llenar el calendario. Aquí entran mucho mejor la gastronomía, las terrazas, el hotel y los planes de temporada.',
+    },
+    threeNights: {
+      title: 'Si duermes 3 noches',
+      plan:
+        'Tres noches solo tienen sentido si conviertes Aranjuez en una escapada lenta: hotel más protagonista, spa, piscina si es temporada, bodega, huerta, Tren de la Fresa o un fin de semana con planes culturales.',
+      warning:
+        'No vendería tres noches como la opción estándar. Aranjuez no es una ciudad de tres días intensos. Es una escapada que puede estirarse si el viajero quiere descansar.',
+    },
+  },
+
+  foodAndRestaurants: {
+    title: 'Dónde comer en Aranjuez y por qué la comida importa más de lo que parece',
+    intro:
+      'La comida en Aranjuez no debería aparecer como un añadido secundario. Forma parte del viaje. La huerta ribereña, las verduras de temporada, los fresones, las terrazas y los restaurantes tradicionales hacen que la escapada tenga más cuerpo que si solo hablas de palacio y jardines.',
+    foodIdentity:
+      'Aranjuez tiene una relación muy fuerte con la huerta. En temporada, fresas, fresones, espárragos, alcachofas y guisantes ayudan a entender que el destino no es solo monumental, sino también agrícola y gastronómico. Esto encaja especialmente bien con una escapada de primavera u otoño.',
+    areas: [
+      {
+        name: 'Centro, Postas, Stuart y Plaza de la Constitución',
+        description:
+          'La zona más cómoda para tapas, comida informal, cena sin complicarse y ambiente de fin de semana. Es buena para quien duerme en el centro y quiere moverse andando.',
+      },
+      {
+        name: 'Entorno del río y jardines',
+        description:
+          'Más interesante para comer con sensación de escapada, terraza o vistas. Aquí el plan no es solo comer, sino alargar el paseo y sentarse sin mirar tanto el reloj.',
+      },
+      {
+        name: 'Restaurantes de producto',
+        description:
+          'La opción buena si quieres que la comida sea una parte importante del viaje. En Aranjuez hay restaurantes donde la huerta y el producto local justifican reservar con más intención.',
+      },
+    ],
+    recommendedRestaurants: [
+      {
+        name: 'Casa José',
+        type: 'Comida especial / producto de huerta',
+        priceFeeling: 'Medio-alto o alto según elección',
+        whyItFits:
+          'Es de los nombres más sólidos para quien quiere que la comida sea parte central de la escapada. Encaja muy bien en una visita de 1 o 2 noches, especialmente si quieres una comida larga y sin prisas.',
+        bestFor:
+          'Parejas, escapada gastronómica, celebración tranquila o viaje donde prefieres comer muy bien antes que meter más visitas.',
+        caution:
+          'No lo pondría como opción económica. Mejor presentarlo como capricho gastronómico razonado.',
+      },
+      {
+        name: 'Casa Delapio',
+        type: 'Tradicional actualizada / buena base local',
+        priceFeeling: 'Medio',
+        whyItFits:
+          'Muy buena opción si quieres cocina tradicional con algo más de intención, sin que el viaje se vuelva demasiado formal. Suele encajar bien con la idea de comer bien pero no convertirlo todo en alta cocina.',
+        bestFor:
+          'Una comida seria pero cómoda, parejas, viajeros que valoran producto y platos reconocibles.',
+        caution:
+          'Reservaría en fin de semana. Aranjuez no tiene una oferta infinita y los sitios buenos se llenan.',
+      },
+      {
+        name: 'Asador El Corral de la Abuela',
+        type: 'Asador / carne / comida contundente',
+        priceFeeling: 'Medio-alto',
+        whyItFits:
+          'Buena opción si el viajero quiere comer carne, asador y una comida más potente. Tiene muchas señales positivas de usuarios sobre producto y servicio.',
+        bestFor:
+          'Comida de sábado, grupo pequeño, viaje donde apetece algo contundente después del paseo.',
+        caution:
+          'Algunas opiniones mencionan sensación de turnos o menos sobremesa de la esperada. Conviene reservar y preguntar bien el horario si quieres una comida larga.',
+      },
+      {
+        name: 'El Rana Verde',
+        type: 'Clásico junto al Tajo / terraza / comida fácil',
+        priceFeeling: 'Medio',
+        whyItFits:
+          'No es solo el plato: es el marco. Junto al río, con una sensación muy de Aranjuez, funciona bien para quien quiere una comida agradable sin alejarse del tono del viaje.',
+        bestFor:
+          'Comida con vistas, plan de amigos, comida sin demasiada complicación, viajeros que priorizan ubicación.',
+        caution:
+          'No lo vendería como el restaurante más fino, sino como un clásico muy de situación. Mejor si reservas terraza cuando el clima acompañe.',
+      },
+      {
+        name: 'Aguatinta',
+        type: 'Actual / cuidado / escapada gastronómica',
+        priceFeeling: 'Medio-alto',
+        whyItFits:
+          'Buena opción para reforzar la idea de que Aranjuez también puede tener una comida más especial, no solo menús de día y terrazas.',
+        bestFor:
+          'Parejas, cena de fin de semana, escapada de dos noches.',
+        caution:
+          'Confirmar horarios y reservar, sobre todo si la escapada cae en fechas buenas de primavera.',
+      },
+    ],
+    budgetAdvice:
+      'En Aranjuez se puede comer de forma bastante razonable si tiras de menú o tapas, pero el viaje cambia mucho si reservas una comida buena. Para una noche, quizá compensa gastar más en una comida que en llenar el día de visitas. Para dos noches, haría una comida especial y otra más informal.',
+    editorialTip:
+      'La comida es una de las capas que más ayudan a que Aranjuez no parezca "solo jardines". Conviene darle un bloque propio y no esconderla en consejos prácticos.',
+  },
+
+  seasonalPlans: {
+    title: 'Planes de temporada que hacen que Aranjuez suba de nivel',
+    intro:
+      'Aranjuez mejora mucho cuando coincide con temporada buena. No porque fuera de primavera no merezca la pena, sino porque aquí el clima, la huerta y los jardines pesan más que en una ciudad monumental compacta.',
+    plans: [
+      {
+        name: 'Tren de la Fresa',
+        when:
+          'Primavera y algunas fechas concretas según temporada oficial.',
+        whyItFits:
+          'Es uno de los planes que mejor conectan con la identidad del destino: tren histórico, llegada desde Madrid, fresas, patrimonio y sensación de escapada clásica.',
+        idealFor:
+          'Familias, parejas que quieran una experiencia más redonda y viajeros que prefieren que el trayecto también sea parte del plan.',
+        caution:
+          'No lo pondría como imprescindible universal. Es más experiencia que transporte práctico. Para llegar fácil y barato, Cercanías sigue siendo lo más directo.',
+      },
+      {
+        name: 'Huerta de Aranjuez',
+        when:
+          'Especialmente interesante en temporada de producto y visitas agrícolas.',
+        whyItFits:
+          'Añade una capa que muchas guías olvidan: Aranjuez no es solo Real Sitio, también es despensa. Fresas, fresones, espárragos, alcachofas y guisantes ayudan a contar mejor el destino.',
+        idealFor:
+          'Dos noches, escapadas tranquilas, viajeros gastronómicos y gente que ya conoce lo típico.',
+      },
+      {
+        name: 'Bodegas y catas',
+        when:
+          'Buen complemento para dos o tres noches.',
+        whyItFits:
+          'Tiene sentido si quieres que la segunda noche no sea "más monumentos", sino otra forma de disfrutar la zona.',
+        idealFor:
+          'Parejas, viajes sin niños, escapadas de otoño o primavera.',
+      },
+      {
+        name: 'Barco, piragua o paseo junto al Tajo',
+        when:
+          'Mejor con buen tiempo.',
+        whyItFits:
+          'Refuerza el carácter fluvial del destino. No es imprescindible, pero puede hacer que Aranjuez parezca menos estática y más vivida.',
+        idealFor:
+          'Segunda visita, viaje familiar o escapada de dos noches.',
+      },
+    ],
+  },
+
+  hotelDecisionGuide: {
+    title: 'Dónde dormir según el tipo de viaje',
+    intro:
+      'En Aranjuez la ubicación importa mucho, pero no siempre por la misma razón. Para una noche, dormir céntrico te ahorra energía. Para dos, te permite cenar y pasear sin pensar. Para tres, puede tener sentido salir un poco del centro si el hotel aporta spa, piscina o descanso.',
+    options: [
+      {
+        hotel: 'NH Collection Palacio de Aranjuez',
+        bestFor:
+          'Primera vez, escapada en pareja, una o dos noches, viaje sin coche y máxima comodidad.',
+        realWhy:
+          'Su gran ventaja es que hace la escapada muy fácil: estás frente al Palacio, cerca de jardines y bien colocado para que el viaje sea andando.',
+        caution:
+          'No siempre será la opción más barata. Aquí pagas ubicación y comodidad.',
+      },
+      {
+        hotel: 'Hostal Real Aranjuez',
+        bestFor:
+          'Una noche práctica, presupuesto más contenido, viajeros que quieren centro sin pagar hotel superior.',
+        realWhy:
+          'Tiene sentido como base funcional: céntrico, sencillo y suficiente si el hotel no va a ser protagonista.',
+        caution:
+          'Conviene revisar habitación concreta y accesibilidad. En alojamientos más sencillos, detalles como escaleras, ruido o baño pueden cambiar bastante la experiencia.',
+      },
+      {
+        hotel: 'Posada de la Costurera',
+        bestFor:
+          'Escapada pequeña, céntrica y con algo más de personalidad que una base puramente funcional.',
+        realWhy:
+          'Encaja con una Aranjuez tranquila y de paseo, especialmente si quieres moverte a pie y no necesitas grandes servicios.',
+        caution:
+          'No la vendería como hotel-capricho, sino como alojamiento agradable y bien situado.',
+      },
+      {
+        hotel: 'Occidental Aranjuez',
+        bestFor:
+          'Tres noches, escapada con spa, descanso, coche o plan donde el hotel pesa más que el centro.',
+        realWhy:
+          'Tiene más sentido cuando quieres que el alojamiento forme parte del viaje, no solo dormir cerca del Palacio.',
+        caution:
+          'No es la opción más lógica si tu prioridad es hacerlo todo andando desde el centro.',
+      },
+    ],
+    verdict:
+      'Para casi todos los usuarios, la recomendación segura es centro en 1 o 2 noches. Solo abriría la puerta a hotel más alejado si el viaje va claramente de descanso.',
+  },
+
+  honestWarnings: {
+    title: 'Lo que conviene saber antes de ir',
+    items: [
+      {
+        title: 'Los jardines son grandes de verdad',
+        text:
+          'No los trates como un parque pequeño al lado del Palacio. Especialmente el Jardín del Príncipe puede comerse una mañana entera si te lo tomas en serio.',
+      },
+      {
+        title: 'No todas las fuentes son una apuesta segura',
+        text:
+          'Algunos viajeros se encuentran fuentes apagadas o zonas menos lucidas de lo esperado. Mejor vender los jardines por sombra, paseo, escala y ambiente, no solo por fuentes funcionando.',
+      },
+      {
+        title: 'La estación no está pegada al Palacio',
+        text:
+          'Se puede ir andando, pero conviene contarlo bien: al llegar en tren todavía queda paseo. Esto no es malo, pero si alguien viaja con calor, niños o maletas, cambia la percepción.',
+      },
+      {
+        title: 'En verano hay que ajustar expectativas',
+        text:
+          'Aranjuez con calor puede hacerse pesado. Palacio temprano, comida larga, sombra y paseo al final del día. No recomendaría caminar jardines a pleno mediodía.',
+      },
+      {
+        title: 'Reservar para comer importa más de lo que parece',
+        text:
+          'En fines de semana bonitos, los sitios buenos pueden llenarse. Si la comida va a ser parte del viaje, no la dejaría al azar.',
+      },
+      {
+        title: 'No es Toledo, y eso es precisamente lo bueno',
+        text:
+          'Aranjuez no compite por intensidad monumental. Compite por calma, amplitud, paseo, jardines, río y una elegancia menos obvia.',
+      },
+    ],
+  },
+
+  seoBlocks: {
+    whatToSee: {
+      title: 'Qué ver en Aranjuez en una escapada corta',
+      text:
+        'Lo esencial es el Palacio Real, el Jardín de la Isla, el Jardín del Príncipe y el entorno del Tajo. Si tienes más tiempo, añade el Museo de Falúas Reales, la Casa del Labrador, una comida de huerta o una bodega. La clave no es verlo todo, sino elegir bien para que el viaje no pierda su ritmo.',
+    },
+    howToArrive: {
+      title: 'Cómo llegar a Aranjuez desde Madrid sin coche',
+      text:
+        'La forma más cómoda para la mayoría de viajeros es el tren de Cercanías. La escapada funciona especialmente bien sin coche porque una vez allí lo normal es caminar. Aun así, conviene revisar horarios actualizados antes de salir y tener en cuenta que desde la estación hasta la zona del Palacio hay un paseo.',
+    },
+    whereToEat: {
+      title: 'Dónde comer en Aranjuez',
+      text:
+        'Aranjuez merece un bloque gastronómico propio. Puedes hacer una comida sencilla de menú o tapas en el centro, pero también reservar algo más especial en restaurantes donde la huerta y el producto local tienen más peso. Si vas en pareja o haces noche, una buena comida puede ser uno de los mejores momentos del viaje.',
+    },
+    isItWorthSleeping: {
+      title: '¿Merece la pena dormir en Aranjuez?',
+      text:
+        'Sí, especialmente una noche. Dormir allí cambia el viaje porque evita la sensación de excursión rápida y permite disfrutar mejor de jardines, cena y paseo. Dos noches compensan si quieres calma, comida buena o planes de temporada. Tres noches solo las recomendaría si buscas descanso real.',
+    },
+  },
+
   faq: [
     {
       question: '¿Aranjuez es mejor en excursión de un día o durmiendo allí?',

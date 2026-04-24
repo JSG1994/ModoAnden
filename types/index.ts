@@ -43,6 +43,113 @@ export interface AffiliateLinks {
   transportUrl?: string
 }
 
+export interface RealExperience {
+  title: string
+  intro: string
+  officialReading: string
+  realTravelerReading: string
+  honestVerdict: string
+}
+
+export interface DetailedItinerary {
+  title: string
+  intro: string
+  oneDayFromMadrid: {
+    title: string
+    plan: string
+    warning: string
+  }
+  oneNight: {
+    title: string
+    plan: string
+    whyItWorks: string
+  }
+  twoNights: {
+    title: string
+    plan: string
+    whyItWorks: string
+  }
+  threeNights: {
+    title: string
+    plan: string
+    warning: string
+  }
+}
+
+export interface RestaurantArea {
+  name: string
+  description: string
+}
+
+export interface RecommendedRestaurant {
+  name: string
+  type: string
+  priceFeeling: string
+  whyItFits: string
+  bestFor: string
+  caution: string
+}
+
+export interface FoodAndRestaurants {
+  title: string
+  intro: string
+  foodIdentity: string
+  areas: RestaurantArea[]
+  recommendedRestaurants: RecommendedRestaurant[]
+  budgetAdvice: string
+  editorialTip: string
+}
+
+export interface SeasonalPlan {
+  name: string
+  when: string
+  whyItFits: string
+  idealFor: string
+  caution?: string
+}
+
+export interface SeasonalPlans {
+  title: string
+  intro: string
+  plans: SeasonalPlan[]
+}
+
+export interface HotelDecisionOption {
+  hotel: string
+  bestFor: string
+  realWhy: string
+  caution: string
+}
+
+export interface HotelDecisionGuide {
+  title: string
+  intro: string
+  options: HotelDecisionOption[]
+  verdict: string
+}
+
+export interface HonestWarningItem {
+  title: string
+  text: string
+}
+
+export interface HonestWarnings {
+  title: string
+  items: HonestWarningItem[]
+}
+
+export interface SeoBlockItem {
+  title: string
+  text: string
+}
+
+export interface EscapeSeoBlocks {
+  whatToSee: SeoBlockItem
+  howToArrive: SeoBlockItem
+  whereToEat: SeoBlockItem
+  isItWorthSleeping: SeoBlockItem
+}
+
 export interface Escape {
   id: string
   slug: string
@@ -89,6 +196,13 @@ export interface Escape {
     quickWeekendAdvice: { title: string; text: string }
     closing: { title: string; text: string }
   }
+  realExperience?: RealExperience
+  detailedItinerary?: DetailedItinerary
+  foodAndRestaurants?: FoodAndRestaurants
+  seasonalPlans?: SeasonalPlans
+  hotelDecisionGuide?: HotelDecisionGuide
+  honestWarnings?: HonestWarnings
+  seoBlocks?: EscapeSeoBlocks
   faq: FAQItem[]
   affiliateLinks?: AffiliateLinks
 }

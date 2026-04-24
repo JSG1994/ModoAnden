@@ -6,6 +6,7 @@ import EscapeDetailHero from '@/components/detail/EscapeDetailHero'
 import QuickFacts from '@/components/detail/QuickFacts'
 import DurationTabs from '@/components/detail/DurationTabs'
 import EditorialSection from '@/components/detail/EditorialSection'
+import ExtendedContentSection from '@/components/detail/ExtendedContentSection'
 import CTASection from '@/components/detail/CTASection'
 
 interface Props {
@@ -186,6 +187,7 @@ export default function EscapeDetailPage({ params }: Props) {
               <DurationTabs variants={escape.durationVariants} />
             </section>
 
+            <ExtendedContentSection escape={escape} />
             <EditorialSection escape={escape} />
 
             <CTASection />
