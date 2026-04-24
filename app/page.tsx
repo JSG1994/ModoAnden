@@ -1,7 +1,6 @@
 ﻿import HeroSection from '@/components/home/HeroSection'
 import QuickFilters from '@/components/home/QuickFilters'
 import FeaturedEscapes from '@/components/home/FeaturedEscapes'
-import HowItWorks from '@/components/home/HowItWorks'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://modoanden.com'
 
@@ -35,7 +34,6 @@ export default function HomePage() {
       <HeroSection />
       <QuickFilters />
       <FeaturedEscapes />
-      <HowItWorks />
     </>
   )
 }
