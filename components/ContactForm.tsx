@@ -38,13 +38,7 @@ export default function ContactForm() {
     return (
       <div className="bg-brand-accent/10 border border-brand-accent/30 rounded-xl p-8 text-center">
         <p className="font-semibold text-brand-accent text-lg mb-2">Mensaje enviado</p>
-        <p className="text-sm text-slate-600">Gracias, te respondemos pronto.</p>
-        <button
-          onClick={() => setSent(false)}
-          className="text-xs text-slate-500 hover:text-slate-700 mt-4 underline"
-        >
-          Enviar otro mensaje
-        </button>
+        <p className="text-sm text-slate-600">Gracias por ponerte en contacto con nosotros, te responderemos con la mayor brevedad posible.</p>
       </div>
     )
   }
