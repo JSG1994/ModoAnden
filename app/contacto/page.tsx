@@ -3,8 +3,17 @@ import ContactForm from '@/components/ContactForm'
 import { Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contacto',
-  description: 'Escribenos si tienes alguna pregunta, sugerencia o propuesta.',
+  title: 'Contacto — ModoAndén',
+  description: 'Escríbenos si tienes preguntas, sugerencias o propuestas. Responderemos lo antes posible.',
+  alternates: {
+    canonical: '/contacto',
+  },
+  openGraph: {
+    title: 'Contacta con ModoAndén',
+    description: 'Ponte en contacto con nuestro equipo para sugerencias, preguntas o colaboraciones.',
+    url: '/contacto',
+    type: 'website',
+  },
 }
 
 export default function ContactoPage() {

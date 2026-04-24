@@ -12,11 +12,12 @@ export default function EscapeCard({ escape }: Props) {
   const minNights = Math.min(...escape.durationVariants.map(d => d.nights))
   const maxNights = Math.max(...escape.durationVariants.map(d => d.nights))
   const nightsLabel = minNights === maxNights ? `${minNights} noche${minNights > 1 ? 's' : ''}` : `${minNights}-${maxNights} noches`
+  const imageAlt = escape.heroImageAlt || `${escape.title} - Escapada sin coche desde ${escape.departureCity}`
 
   return (
     <Link href={`/escapadas/${escape.slug}`} className="group flex flex-col sm:flex-row rounded-xl border border-slate-200 hover:border-brand-accent overflow-hidden transition-colors">
       <div className="relative w-full sm:w-56 h-48 sm:h-auto shrink-0">
-        <Image src={escape.heroImage} alt={escape.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+        <Image src={escape.heroImage} alt={imageAlt} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 640px) 100vw, 224px" />
       </div>
       <div className="p-5 flex flex-col justify-between flex-1">
         <div>

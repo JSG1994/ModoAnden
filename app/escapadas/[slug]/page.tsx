@@ -18,6 +18,8 @@ export function generateStaticParams() {
   return escapes.map(e => ({ slug: e.slug }))
 }
 
+export const revalidate = 3600 // Revalidate every hour
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const escape = getEscapeBySlug(escapes, params.slug)
   if (!escape) return {}
@@ -53,19 +55,96 @@ export default function EscapeDetailPage({ params }: Props) {
   const escape = getEscapeBySlug(escapes, params.slug)
   if (!escape) notFound()
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: siteUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Escapadas',
+        item: `${siteUrl}/escapadas`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: escape.title,
+        item: `${siteUrl}/escapadas/${escape.slug}`,
+      },
+    ],
+  }
+
   const tripJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Trip',
-    name: `Escapada a ${escape.title} sin coche`,
-    description: escape.shortDescription,
-    image: [escape.heroImage],
-    url: `${siteUrl}/escapadas/${escape.slug}`,
-    touristType: escape.overview.bestFor,
-    itinerary: escape.durationVariants.map(variant => ({
-      '@type': 'TouristTrip',
-      name: variant.title,
-      description: variant.summary,
-    })),
+    '@graph': [
+      {
+        '@type': 'Trip',
+        name: `Escapada a ${escape.title} sin coche`,
+        description: escape.shortDescription,
+        image: escape.heroImage,
+        url: `${siteUrl}/escapadas/${escape.slug}`,
+        author: {
+          '@type': 'Organization',
+          name: 'ModoAndén',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'ModoAndén',
+          logo: {
+            '@type': 'ImageObject',
+            url: `${siteUrl}/brand/logo-modoanden.png`,
+          },
+        },
+        destinationLocation: {
+          '@type': 'Place',
+          name: escape.location,
+          geo: {
+            '@type': 'GeoShape',
+            addressCountry: 'ES',
+          },
+        },
+        departureLocation: {
+          '@type': 'Place',
+          name: escape.departureCity,
+          geo: {
+            '@type': 'GeoShape',
+            addressCountry: 'ES',
+          },
+        },
+        touristType: escape.overview.bestFor,
+        itinerary: escape.durationVariants.map((variant, idx) => ({
+          '@type': 'TouristTrip',
+          position: idx + 1,
+          name: variant.title,
+          description: variant.summary,
+          duration: `P${variant.nights}N`,
+          recommendedSeason: escape.overview.bestSeason,
+          includes: {
+            '@type': 'Thing',
+            name: 'Alojamiento sugerido',
+            description: variant.accommodations.map(a => a.name).join(', '),
+          },
+        })),
+      },
+      breadcrumbSchema,
+      {
+        '@type': 'FAQPage',
+        mainEntity: escape.faq.map(item => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      },
+    ],
   }
 
   return (

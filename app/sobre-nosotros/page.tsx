@@ -1,8 +1,17 @@
 ﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sobre nosotros',
-  description: 'Que es ModoAnden y como seleccionamos los destinos de escapadas sin coche.',
+  title: 'Sobre ModoAndén — Quiénes somos',
+  description: 'Descubre la historia de ModoAndén y cómo seleccionamos destinos de escapadas sin coche. Nuestra misión: viajes simples, sin complicaciones.',
+  alternates: {
+    canonical: '/sobre-nosotros',
+  },
+  openGraph: {
+    title: 'Sobre ModoAndén — Escapadas sin coche',
+    description: 'Conoce quiénes somos y cómo seleccionamos los mejores destinos para escapadas accesibles sin necesidad de coche.',
+    url: '/sobre-nosotros',
+    type: 'website',
+  },
 }
 
 export default function SobreNosotrosPage() {

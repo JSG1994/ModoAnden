@@ -8,9 +8,11 @@ interface Props {
 }
 
 export default function EscapeDetailHero({ escape }: Props) {
+  const imageAlt = escape.heroImageAlt || `${escape.title} - Escapada sin coche desde ${escape.departureCity} | ModoAndén`
+  
   return (
     <div className="relative h-72 sm:h-96 w-full">
-      <Image src={escape.heroImage} alt={escape.title} fill className="object-cover" priority />
+      <Image src={escape.heroImage} alt={imageAlt} fill className="object-cover" priority sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
         <div className="flex items-center gap-2 mb-2">

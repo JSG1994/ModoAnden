@@ -16,9 +16,16 @@ export const metadata: Metadata = {
   },
   description:
     'Escapadas fáciles de organizar sin necesidad de coche. Selección curada de destinos accesibles en tren o bus. Decide rápido, reserva sin perder tiempo.',
-  keywords: ['escapadas sin coche', 'viajes en tren', 'fin de semana sin coche', 'escapadas España'],
+  keywords: ['escapadas sin coche', 'viajes en tren', 'fin de semana sin coche', 'escapadas España', 'viajes en tren desde Madrid', 'destinos accesibles sin coche'],
+  authors: [{ name: 'ModoAndén', url: siteUrl }],
+  creator: 'ModoAndén',
+  publisher: 'ModoAndén',
   alternates: {
     canonical: '/',
+    languages: {
+      'es-ES': `${siteUrl}`,
+      'es': `${siteUrl}`,
+    },
   },
   icons: {
     icon: [
@@ -70,8 +77,31 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    name: 'ModoAndén',
+    url: siteUrl,
+    logo: `${siteUrl}/brand/logo-modoanden.png`,
+    description: 'Recomendaciones de escapadas cortas por España sin necesidad de coche.',
+    sameAs: ['https://www.instagram.com/modoanden', 'https://www.facebook.com/modoanden', 'https://twitter.com/modoanden'],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      email: 'hola@modoanden.com',
+      availableLanguage: 'es',
+    },
+    areaServed: 'ES',
+    serviceType: 'Travel Planning',
+  }
+
   return (
     <html lang="es" className={inter.className}>
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+        <meta name="theme-color" content="#1e3a8a" />
+        <meta name="format-detection" content="telephone=no" />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

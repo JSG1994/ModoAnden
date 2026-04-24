@@ -50,7 +50,9 @@ export interface Escape {
   subtitle: string
   location: string
   departureCity: string
+  alternativeDepartureCities?: string[]
   heroImage: string
+  heroImageAlt?: string
   category: Category
   tags: string[]
   featured: boolean

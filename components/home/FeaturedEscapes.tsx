@@ -13,27 +13,30 @@ export default function FeaturedEscapes() {
       <div className="max-w-7xl mx-auto">
         <SectionHeading title="Escapadas destacadas" subtitle="Selección editorial de los mejores destinos" />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          {featured.map(escape => (
-            <Link key={escape.id} href={`/escapadas/${escape.slug}`} className="group rounded-xl overflow-hidden border border-slate-200 hover:border-brand-accent transition-colors">
-              <div className="relative h-48">
-                <Image src={escape.heroImage} alt={escape.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
-              </div>
-              <div className="p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <Badge>{escape.category}</Badge>
-                  <span className="text-xs text-slate-400 flex items-center gap-1">
-                    <MapPin size={11} />
-                    {escape.departureCity}
-                  </span>
+          {featured.map(escape => {
+            const imageAlt = escape.heroImageAlt || `${escape.title} - Escapada sin coche desde ${escape.departureCity}`
+            return (
+              <Link key={escape.id} href={`/escapadas/${escape.slug}`} className="group rounded-xl overflow-hidden border border-slate-200 hover:border-brand-accent transition-colors">
+                <div className="relative h-48">
+                  <Image src={escape.heroImage} alt={imageAlt} fill className="object-cover group-hover:scale-105 transition-transform duration-300" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                 </div>
-                <h3 className="font-bold text-slate-900 group-hover:text-brand-accent transition-colors">{escape.title}</h3>
-                <p className="text-sm text-slate-500 mt-1 line-clamp-2">{escape.subtitle}</p>
-                <div className="flex items-center gap-1 text-brand-accent text-sm font-medium mt-3">
-                  Ver escapada <ArrowRight size={14} />
+                <div className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge>{escape.category}</Badge>
+                    <span className="text-xs text-slate-400 flex items-center gap-1">
+                      <MapPin size={11} />
+                      {escape.departureCity}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-slate-900 group-hover:text-brand-accent transition-colors">{escape.title}</h3>
+                  <p className="text-sm text-slate-500 mt-1 line-clamp-2">{escape.subtitle}</p>
+                  <div className="flex items-center gap-1 text-brand-accent text-sm font-medium mt-3">
+                    Ver escapada <ArrowRight size={14} />
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </section>
