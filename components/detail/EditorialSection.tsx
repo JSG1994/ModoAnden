@@ -1,5 +1,5 @@
 import type { Escape } from '@/types'
-import { Train, Wallet, Ticket, Sun, CloudRain, Star, Calendar, AlertCircle } from 'lucide-react'
+import { Train, Ticket, Sun, CloudRain, Star, Calendar, AlertCircle } from 'lucide-react'
 
 export default function EditorialSection({ escape }: { escape: Escape }) {
   const { practical, editorial } = escape
@@ -15,30 +15,6 @@ export default function EditorialSection({ escape }: { escape: Escape }) {
         {practical.howToGetThereExtra && (
           <p className="text-slate-600 leading-relaxed">{practical.howToGetThereExtra}</p>
         )}
-      </section>
-
-      <section>
-        <h2 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-          <Wallet size={20} className="text-brand-accent" />
-          Presupuesto orientativo
-        </h2>
-        <p className="text-slate-600 leading-relaxed mb-4">{practical.budgetIntro}</p>
-        <div className="grid gap-4 md:grid-cols-3">
-          {practical.budgets.map(b => (
-            <div key={b.nights} className="bg-slate-50 rounded-lg p-4">
-              <h4 className="font-semibold text-slate-900 mb-2">{b.label}</h4>
-              <dl className="space-y-1.5 mb-3">
-                {b.items.map(item => (
-                  <div key={item.concept} className="flex justify-between text-sm">
-                    <dt className="text-slate-500">{item.concept}</dt>
-                    <dd className="text-slate-700">{item.level}</dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="text-xs text-slate-500">{b.summary}</p>
-            </div>
-          ))}
-        </div>
       </section>
 
       <section>

@@ -156,14 +156,9 @@ export default function ExtendedContentSection({ escape }: Props) {
             </div>
           )}
 
-          {(hasText(foodAndRestaurants.budgetAdvice) || hasText(foodAndRestaurants.editorialTip)) && (
+          {hasText(foodAndRestaurants.editorialTip) && (
             <div className="bg-brand-accent/5 border border-brand-accent/20 rounded-lg p-4">
-              {hasText(foodAndRestaurants.budgetAdvice) && (
-                <p className="text-sm text-slate-700 mb-2">{foodAndRestaurants.budgetAdvice}</p>
-              )}
-              {hasText(foodAndRestaurants.editorialTip) && (
-                <p className="text-sm text-slate-700">{foodAndRestaurants.editorialTip}</p>
-              )}
+              <p className="text-sm text-slate-700">{foodAndRestaurants.editorialTip}</p>
             </div>
           )}
         </section>
