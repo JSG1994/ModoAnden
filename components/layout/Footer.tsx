@@ -13,32 +13,23 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer className="bg-brand text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-8">
-        <div className="md:col-span-4">
-          <p className="font-bold text-2xl mb-2 tracking-tight">ModoAndén</p>
-          <p className="text-sm text-slate-300 max-w-sm">Escapadas y viajes sin coche por España, con guías directas y útiles.</p>
-        </div>
-        <div className="md:col-span-4">
-          <p className="font-semibold text-sm mb-3 uppercase tracking-wide text-slate-400">Páginas</p>
-          <ul className="space-y-2">
-            {footerLinks.map(link => (
-              <li key={link.href}>
-                <Link href={link.href} className="text-sm text-slate-300 hover:text-white transition-colors">
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="md:col-span-4">
-          <p className="font-semibold text-sm mb-3 uppercase tracking-wide text-slate-400">Contacto</p>
-          <a href="mailto:modoanden@gmail.com" className="flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors">
-            <Mail size={14} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+          <p className="font-bold text-lg tracking-tight">ModoAndén</p>
+          <a href="mailto:modoanden@gmail.com" className="flex items-center gap-1.5 text-sm text-slate-300 hover:text-white transition-colors">
+            <Mail size={13} />
             modoanden@gmail.com
           </a>
         </div>
+        <div className="flex flex-wrap gap-x-5 gap-y-2 mb-4">
+          {footerLinks.map(link => (
+            <Link key={link.href} href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">
+              {link.label}
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className="border-t border-slate-700 py-4 text-center text-xs text-slate-500">
+      <div className="border-t border-slate-700 py-3 text-center text-xs text-slate-500">
         &copy; {new Date().getFullYear()} ModoAndén. Todos los derechos reservados.
       </div>
     </footer>
