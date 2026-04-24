@@ -5,15 +5,33 @@ import { Send } from 'lucide-react'
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    try {
+      const response = await fetch('https://formspree.io/f/xzdyobwy', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
+      if (response.ok) {
+        setSent(true)
+        setForm({ name: '', email: '', message: '' })
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (sent) {
@@ -21,6 +39,12 @@ export default function ContactForm() {
       <div className="bg-brand-accent/10 border border-brand-accent/30 rounded-xl p-8 text-center">
         <p className="font-semibold text-brand-accent text-lg mb-2">Mensaje enviado</p>
         <p className="text-sm text-slate-600">Gracias, te respondemos pronto.</p>
+        <button
+          onClick={() => setSent(false)}
+          className="text-xs text-slate-500 hover:text-slate-700 mt-4 underline"
+        >
+          Enviar otro mensaje
+        </button>
       </div>
     )
   }
@@ -65,10 +89,11 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-light text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+        disabled={loading}
+        className="inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-light disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold px-6 py-3 rounded-lg transition-colors"
       >
         <Send size={15} />
-        Enviar mensaje
+        {loading ? 'Enviando...' : 'Enviar mensaje'}
       </button>
     </form>
   )
